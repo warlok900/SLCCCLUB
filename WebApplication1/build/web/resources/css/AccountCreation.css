@@ -1,0 +1,25 @@
+body
+{
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+#AccountCreationForm
+{
+   padding: 30px 60px; 
+   margin-top: 20%;
+   -webkit-box-shadow: 0px 17px 105px 17px rgba(0,0,0,0.75);
+   -moz-box-shadow: 0px 17px 105px 17px rgba(0,0,0,0.75);
+   box-shadow: 0px 17px 105px 17px rgba(0,0,0,0.75);
+   color: #fff;
+}
+#AccountCreationFormTitle
+{
+    text-align: center;
+}
+.textBoxes
+{
+    background-color: #3c3c3c;
+    color: #fff;
+}

@@ -1,0 +1,332 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body
+{
+    overflow-x: hidden;
+    font-family: 'open Sans', sans-serif;
+    text-rendering: optimizelegibility !important;
+    -webkit-font-smoothing: antialiased !important;   
+}
+li
+{
+    list-style: none;
+    display:inline-block;
+}
+a
+{
+    text-decoration: none;
+    transition: all 500ms ease-in-out;
+}
+
+a:hover,
+a:active
+{
+    text-decoration: none;
+}
+h1,
+h2,
+h4
+{
+    font-family: 'PT Sans Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+p
+{
+    font-size: 15px;
+    line-height: 21px;
+}
+.btn
+{
+    transition: all 300ms ease-in-out;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+}
+.btn:hover
+{
+    background-color: #ededed !important;
+    color: #3c3c3c !important;
+    border: 1px solid #fff !important;
+}
+
+/*NAVAGATION*/
+.navbar
+{
+    background-color: #222222 !important;
+    text-transform: uppercase;
+    font-family: 'PT Sans Narrow', Arial, sans-serif;
+    font-weight: 700;
+}
+.navbar a
+{
+    color: #fff !important;
+    opacity: .7;
+}
+.navbar a:hover
+{
+    opacity: 1;
+    background-color: #111111 !important;
+}
+
+/* End of NAVAGATION*/
+
+/*HEADER*/
+
+.header
+{
+    height: 600px;
+    width: 100%;
+    padding: 30px 0 30px;
+    margin-top: 50px;
+    background-image: url("../img/background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+.header img
+{
+    height: 350px;
+    width: 450px;
+    margin: 70px 0 0 40px;
+}
+.header h1
+{
+    font-size: 40px;
+    font-weight: 700;
+    padding-top: 30px;
+}
+.header h1,
+.header p,
+header button
+{
+    margin-top: 20px;
+}
+.header .btn
+{
+    border-radius: 0;
+    margin: 40px 20px;
+}
+
+@media(max-width:768px)
+{
+    .header
+    {
+        padding: 30px;
+        height: 750px;
+    }
+    .header img
+    {
+        width: 100%;
+        height: 300px;
+        margin: 20px 0 0 20px;
+    }
+    .header .btn
+    {
+        font-size: 10px;
+        margin-left: 20px
+    }
+    .header h1
+    {
+        font-size: 20px;
+    }
+    .header p
+    {
+        font-size: 10px;
+    }
+}
+
+/*END OF HEADER*/
+
+/*Bigin Services*/
+
+.services
+{
+    padding: 80px 0 80px;
+    text-align: center;
+}
+.services h2,
+.services h4
+{
+    color: #4c4c4c;
+    margin: 20px 0 20px;
+}
+.services p
+{
+    color: #737373;
+    font-size: 14px;
+    padding-bottom: 40px;
+}
+.services i
+{
+    height: 80px;
+    width: 80px;
+    font-size: 30px;
+    padding: 25px 20px;
+    border-radius: 50%;
+    background-color: #6699cc;
+    color: #fff;
+}
+@media(max-width:768px)
+{
+    .services
+    {
+        padding: 30px;
+    }
+}
+
+/*End Services*/
+
+/*Start Events*/
+
+.events
+{
+    padding: 50px 0 80px;
+    text-align: center;
+    background-color: #3399ff;
+}
+.events h2,
+.events p
+{
+    color: #fff;
+}
+.events p 
+{
+    padding-bottom: 30px;
+}
+.events .LocalEvents
+{
+    padding: 30px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+.events li
+{
+    display: block;
+    padding: 5px;
+}
+.LocalEvents h4,
+.LocalEvents h1,
+.LocalEvents b
+{
+    color: #4c4c4c;
+}
+.LocalEvents p,
+.LocalEvents li
+{
+   color: #737373; 
+}
+.events button
+{
+    margin-top: 10px;
+}
+@media(max-width:768px)
+{
+    .events
+    {
+        padding: 30px;
+    }
+    .LocalEvents
+    {
+        width: 90%;
+        margin-left: 15px;
+    }
+    
+}
+
+/*End Events*/
+
+/*Begining of Officers*/
+
+.officers
+{
+    padding: 50px 0 80px;
+    text-align: center;
+}
+.officers b,
+.officers h2,
+.officers h4
+{
+    margin: 20px 0 20px;
+    color: #4c4c4c;
+}
+.officers p
+{
+    color: #737373;
+}
+.officers img
+{
+    width: 150px;
+    height: 150px;
+    margin-top: 80px;
+}
+.officers i
+{
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    font-size: 17px;
+    border-radius: 50%;
+    background-color: #a0db8e;
+    color: #809678;
+}
+.officers a:hover i
+{
+    background-color: #709963;
+    color: #fff;
+}
+
+/*End of Officers*/
+
+/*Begining of store */
+.store
+{
+    padding: 50px 0 80px;
+    background-color: #3399ff;
+    text-align: center;
+    color: #fff;
+}
+.store h2
+{
+    color: #fff;
+}
+.store p 
+{
+    padding-bottom: 40px;
+}
+.store img
+{
+    width: 200px;
+    opacity: 0.6;
+    cursor: pointer;
+    margin: 40px 0;
+    transition: all 500ms ease-in-out;
+}
+.store li:hover img
+{
+    opacity: 1;
+}
+/*End of store*/
+
+/*Start of Footer*/
+.footer
+{
+    padding: 30px;
+    color: #cccccc;
+    background-color: #222222;
+}
+.footer .social
+{
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #cccccc;
+    margin-bottom: 10px;
+    margin-right: 5px;
+}

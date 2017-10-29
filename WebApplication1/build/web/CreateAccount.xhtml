@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta name="viewport" content="width=device-width, initial-scale=0.75"></meta>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css" integrity="sha256-YvAujCECPPslDy9IUX/t20rU7WANfRpYMtIusXyn/ho=" crossorigin="anonymous"/>
+        <link rel="stylesheet" type="text/css" href="resources/css/AccountCreation.css"></link>
+        <title>#{accMsgs.pageTitle}</title>
+    </h:head>
+    <h:body>
+        <!--================================================================Container=============================================================================-->
+        <div class="container-fluid">
+            
+            <!--===============================================================Row================================================================================-->
+            <div class="row">
+                
+                <!--=====================================================Left Column Div==========================================================================-->
+                <div class="col-lg-4 col-md-2 col-sm-1 col-xs-12"></div>
+                
+                 <!--==================================================Middle Column Div==========================================================================-->
+                <div class="col-lg-4 col-md-8 col-sm-10 col-xs-12">
+                    
+                    <!--form start-->
+                    <h:form id="AccountCreationForm">
+                        <!--==================================================================================================================================================-->
+                        
+                        <!--Form Title-->
+                        <div class="form-group"><h1 id="AccountCreationFormTitle">#{accMsgs.formTitle}</h1></div>
+                        
+                        <!--===============================================First Name=========================================================================================-->
+                        
+                        <!--First Name form group-->
+                        <div class="form-group has-feedback" id="CAfirstNameFormGroup">
+                            <!--Input group div to be able to group the input text with the glyph icon-->
+                            <div class="input-group" id="CAfirstNameInputGroup">
+                                <!--span add on glyph icon pencil for First Name input text-->
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil" id="CAfirstNameLeftGlyph"></i></span>
+                                <!--first name input text with form control on it-->
+                                <h:inputText styleClass="form-control textBoxes" id="CAfirstName" value="#{accountCreationBean.firstName}" pt:placeholder="#{accMsgs.firstName}" required="true" requiredMessage="#{accMsgs.firstNameReqired}" validatorMessage="#{accMsgs.firstNameInvalid}">
+                                    <f:validateLength for="CAfirstName" minimum="2" maximum="15" ></f:validateLength>
+                                </h:inputText>
+                            </div>  
+                            <!--Span to hold the error message when there is an error need to add classes: help block-->
+                            <span class="help-block"><h:message id="CAfirstNameMessage" class="text text-danger" for="CAfirstName"></h:message></span>
+                            <!--Span for glyph icon that will display in first name input text when the user is wrong or right needs form control feed back-->
+                            <span class="form-control-feedback" id="CAfirstNameRightGlyph"></span><!--I WANT THIS GLYPH TO BE SHOWN IN MY TEXT BOX ON VALIDATION-->
+                        </div>
+                        
+                        <!--================================================Last Name=====================================================================================================-->  
+                        
+                        <!--Last Name form group-->
+                        <div class="form-group has-feedback" id="CAlastNameFormGroup">
+                            <!--  -->
+                            <div class="input-group" id="CAlastNameInputGroup">
+                                <!--  -->
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil" id="CAlastNameLeftGlyph"></i></span>
+                                <!--  -->
+                                <h:inputText class="form-control textBoxes" required="true" requiredMessage="#{accMsgs.lastNameReuired}" id="CAlastName" value="#{accountCreationBean.lastName}" pt:placeholder="#{accMsgs.lastName}" validatorMessage="#{accMsgs.lastNameInvalid}">
+                                    <f:validateLength for="CAlastName" minimum="2" maximum="15"></f:validateLength>
+                                </h:inputText>
+                            </div>
+                            <!--  -->
+                            <span class="help-block"><h:message id="CAlastNameMessage" class="text text-danger" for="CAlastName"></h:message></span>
+                            <!--  -->
+                            <span class="form-control-feedback" id="CAlastNameRightGlyph"></span>
+                        </div>
+                        
+                        <!--===============================================Email Address=====================================================================================================-->     
+                        
+                        <!--Email form group-->
+                        <div class="form-group has-feedback" id="CAemailFormGroup">
+                            <!--  -->
+                            <div class="input-group" id="CAemailInputGroup">
+                                <!--  -->
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope" id="CAemailLeftGlyph"></i></span>
+                                <!--  -->
+                                <h:inputText class="form-control textBoxes" id="CAemail" value="#{accountCreationBean.email}" pt:placeholder="#{accMsgs.email}" required="true" requiredMessage="#{accMsgs.emailRequired}" validatorMessage="#{accMsgs.emailInvalid}">
+                                    <f:validateRegex pattern="([A-Za-z0-9.-]+)(@[A-Za-z-]+)(\.(com|edu|net|gov))"></f:validateRegex>
+                                </h:inputText>
+                            </div>
+                            <!--  -->
+                            <span class="help-block"><h:message id="CAemailMessage" class="text text-danger" for="CAemail"></h:message></span>
+                            <!-- -->
+                            <span class="form-control-feedback" id="CAemailRightGlyph"></span>
+                        </div>
+                        
+                        <!--==============================================Phone Number=====================================================================================================-->     
+                        
+                        <!--Phone form group-->
+                        <div class="form-group has-feedback" id="CAphoneFormGroup">
+                            <!--  -->
+                            <div class="input-group" id="CAphoneInputGroup">
+                                <!--  -->
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt" id="CAphoneLeftGlyph"></i></span>
+                                <!--  -->
+                                <h:inputText class="form-control textBoxes" id="CAphone" value="#{accountCreationBean.phone}" pt:placeholder="#{accMsgs.phone}" required="true" requiredMessage="#{accMsgs.phoneRequired}" validatorMessage="#{accMsgs.phoneInvalid}">
+                                    <f:validateRegex pattern="^\([\d]{3}\)[\d]{3}[-\s][\d]{4}"></f:validateRegex>
+                                </h:inputText>
+                            </div>  
+                            <!--  -->
+                            <span class="help-block"><h:message id="CAphoneMessage" class="text text-danger" for="CAphone"></h:message></span>
+                            <!-- -->
+                            <span class="form-control-feedback" id="CAphoneRightGlyph"></span>
+                        </div>
+                        
+                       <!--===================================================Major=====================================================================================================-->       
+                        
+                        <!--Major form group-->
+                        <div class="form-group has-feedback" id="CAmajorFormGroup">
+                            <!--  -->
+                            <div class="input-group" id="CAmajorInputGroup">
+                                <!--  -->
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-education" id="CAmajorLeftGlyph"></i></span>
+                                <!--  -->
+                                <h:selectOneMenu class="form-control textBoxes" value="#{accountCreationBean.major}" id="CAmajor">
+                                    <f:selectItem itemLabel="#{accMsgs.ApplicationSoftwareDevelopment}" itemValue="Application Software Development"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.AutomotiveTechnology}" itemValue="Automotive Technology"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.AviationMaintenanceTechnology}" itemValue="Aviation Maintenance"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.Business}" itemValue="Business"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.BusinessAdministration}" itemValue="Business Administration"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.CivilSurveyandMapping}" itemValue="Civil Survey Mapping"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.ClinicalLaboratoryTechnician}" itemValue="Clinical Lab Tech"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.CulinaryArtsOccupations}" itemValue="Culinary Arts Occupations"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.DigitalMediaDesign}" itemValue="Digital Media Design"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.DraftingDesignTechnology}" itemValue="Drafting Design Technology"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.ElectricalTechnician}" itemValue="Electrical Technician"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.EmergencyMedicalTechnology}" itemValue="Emergency Medical Technology"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.GeneralStudies}" itemValue="General Studies"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.HeatingAirConditioningRefrigeration}" itemValue="HVAC/Refrigeration"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.IndustrialElectronics}" itemValue="Industrial Electronics"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.IndustrialTechnology}" itemValue="Industrial Technology"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.InformationalTechnology}" itemValue="Informational Technology"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.MachineToolTechnology}" itemValue="Machine Tool Technology"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.PracticalNursing}" itemValue="Practical Nursing"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.Welding}" itemValue="Welding"></f:selectItem>
+                                </h:selectOneMenu>
+                            </div>  
+                        </div>
+                        
+                        <!--==============================================Member Title=====================================================================================================-->     
+
+                        <!--Member Title form group-->
+                        <div class="form-group has-feedback" id="CAtitleFormGroup">
+                            <div class="input-group" id="CAtitleInputGroup">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-tag" id="CAtitleLeftGlyphicon"></i></span>
+                                <h:selectOneMenu class="form-control textBoxes" value="#{accountCreationBean.title}" id="CAtitle">
+                                    <f:selectItem itemLabel="#{accMsgs.standardTitleItem}" itemValue="Standard"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.advisorTitleItem}" itemValue="Adviser"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.presidentTitleItem}" itemValue="President"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.visePresidentTitleItem}" itemValue="Vice President"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.secretaryTitleItem}" itemValue="Secretary"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.treasurerTitleItem}" itemValue="Treasurer"></f:selectItem>
+                                    <f:selectItem itemLabel="#{accMsgs.companyTitleItem}" itemValue="Company"></f:selectItem>
+                                </h:selectOneMenu>
+                            </div>
+                        </div>
+                        
+                        <!--================================================-UserName=====================================================================================================-->         
+                        <!--UserName form group-->
+                        <div class="form-group has-feedback" id="CAuserNameFormGroup">
+                            <!-- -->
+                            <div class="input-group" id="CAuserNameInputGroup">
+                                <!-- -->
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user" id="CAuserNameLeftGlyph"></i></span>
+                                <!-- -->
+                                <h:inputText class="form-control textBoxes" id="CAuserName" value="#{accountCreationBean.userName}" pt:placeholder="#{accMsgs.userName}" required="true" requiredMessage="#{accMsgs.userNameRequired}"></h:inputText>
+                            </div>  
+                             <span class="help-block"><h:message id="CAuserNameMessage" class="text text-danger" for="CAuserName" ></h:message></span>
+                            <!-- -->
+                            <span class="form-control-feedback" id="CAuserNameRightGlyph"></span>
+                        </div>
+                        <!--================================================Password=====================================================================================================-->     
+                        <!--Password form group-->
+                        <div class="form-group has-feedback" id="CApasswordFormGroup">
+                            <!-- -->
+                            <div class="input-group" id="CApasswordInputGroup">
+                                <!-- -->
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock" id="CApasswordLeftGlyph"></i></span>
+                                <!-- -->
+                                <h:inputText class="form-control textBoxes" id="CApassword" value="#{accountCreationBean.password}" pt:placeholder="#{accMsgs.passwrord}" required="true" requiredMessage="#{accMsgs.passwrordRequired}"></h:inputText>
+                            </div>  
+                            <!--  -->
+                             <span class="help-block"><h:message id="CApasswordMessage" class="text text-danger" for="CApassword"></h:message></span>
+                            <!--  -->
+                            <span class="form-control-feedback" id="CApasswordRightGlyph"></span>
+                        </div>
+                      
+                        <!--Messages for Account Creation success or duplicate account-->
+                        <h:messages id="globleMsg" globalOnly="true" class="text text-danger"/>
+                                                          
+
+                          <!--===============================================Buttons=====================================================================================================-->
+                             <!--Button form group-->
+                        <div class="form-group">
+                            <!--  -->
+                            <h:commandButton class="btn btn-lg btn-block btn-success" value="#{accMsgs.AccountCreationBtn}" id="AccountCreationBtn" action="#{accountCreationBean.createAccount()}"></h:commandButton>
+                        </div>
+                        <!--================================================================================================================================================================-->
+                    <!--End of form-->    
+                    </h:form>
+
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js" integrity="sha256-PbFF1Mdg86urwOYXWNJPP4z5Ge9KLp6KXX1NURQY8Ho=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="resources/js/AccountCreation.js"></script>
+    </h:body>
+</html>
+
